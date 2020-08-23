@@ -9,7 +9,7 @@ body {
 }
 
 .App {
-  background-color: khaki;
+  background-color: #f3e882;
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
@@ -121,4 +121,19 @@ h3 {
   padding-top: 16px;
   color: white;
   text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+
+@media screen and (max-width: 510px) {
+  body {
+    overflow: hidden;
+  }
+
+  .logo {
+    padding-top: 15vh;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    padding: 6vh 30px;
+  }
 }

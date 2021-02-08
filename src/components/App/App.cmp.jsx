@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Weather } from '../Weather';
 import { Home } from '../Home';
@@ -35,6 +35,7 @@ export function App(props) {
               setQuery={setQuery}
             />
           </Route>
+          <Redirect to="/" />
         </Switch>
       </div>
     </BrowserRouter>

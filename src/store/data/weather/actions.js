@@ -1,7 +1,9 @@
 import * as weatherAT from './action-types';
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 const api = {
-  key: 'your key:)',
+  key: API_KEY,
   base: 'https://api.openweathermap.org/data/2.5/',
 };
 

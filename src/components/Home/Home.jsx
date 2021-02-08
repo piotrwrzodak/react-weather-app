@@ -1,6 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-export function Home({ query, search, setQuery }) {
+export function Home({ query, setQuery }) {
+  const history = useHistory();
+
+  const handleKeyPress = (evt) => {
+    if (evt.key === 'Enter') {
+      history.push(`/current-weather/${query}`);
+    }
+  };
+
   return (
     <div>
       <div className="logo">
@@ -14,7 +23,7 @@ export function Home({ query, search, setQuery }) {
           placeholder="Search..."
           onChange={(e) => setQuery(e.target.value)}
           value={query}
-          onKeyPress={search}
+          onKeyPress={handleKeyPress}
         ></input>
       </div>
     </div>

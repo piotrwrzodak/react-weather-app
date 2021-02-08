@@ -8,14 +8,16 @@ body {
   font-family: 'motseratt', sans-serif;
 }
 
-.App {
+.app {
   background-color: #f3e882;
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
+  height: 100vh;
+  width: 100vw;
 }
 
-.App.cold {
+.app--cold {
   background-color: lightskyblue;
 }
 

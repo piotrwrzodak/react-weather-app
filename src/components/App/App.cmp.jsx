@@ -16,11 +16,9 @@ export function App(props) {
     <BrowserRouter>
       <div
         className={
-          props.weather.main
-            ? props.weather.main.temp > 16
-              ? 'app'
-              : 'app app--cold'
-            : 'app'
+          10 > new Date().getMonth() > 4 || props.weather.main?.temp > 16
+            ? 'app'
+            : 'app app--cold'
         }
       >
         <Switch>

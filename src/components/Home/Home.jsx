@@ -7,19 +7,22 @@ export function Home({ query, setQuery }) {
   const handleKeyPress = (evt) => {
     if (evt.key === 'Enter') {
       history.push(`/current-weather/${query}`);
+      setQuery('');
     }
   };
 
   return (
-    <div>
-      <div className="logo">
-        <h1>Weather App</h1>
-        <h3>Check current weather in any place in the world!</h3>
+    <div className="home">
+      <div className="home__heading">
+        <h1 className="home__heading--one">Weather App</h1>
+        <h3 className="home__heading--two">
+          Check current weather in any place in the world!
+        </h3>
       </div>
-      <div className="search-box main">
+      <div className="home__search-box">
         <input
           type="text"
-          className="search-bar"
+          className="search-box__input"
           placeholder="Search..."
           onChange={(e) => setQuery(e.target.value)}
           value={query}

@@ -1,37 +1,13 @@
-import React, { useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export function NotFound({ query, setQuery, props }) {
-  const history = useHistory();
-  const { fetchApi, fetchStatus } = props;
-  const handleKeyPress = (evt) => {
-    if (evt.key === 'Enter') {
-      history.push(`/current-weather/${query}`);
-      console.log('notfound');
-      setQuery('');
-    }
-  };
-
-  useEffect(() => {
-    if (!fetchStatus) {
-      history.goBack();
-      console.log('go back');
-    }
-  }, [fetchStatus]);
-
+export function NotFound() {
   return (
     <div className="not-found">
-      <div className="weather__search-box">
-        <input
-          type="text"
-          className="search-box__input"
-          placeholder="Search..."
-          onChange={(e) => setQuery(e.target.value)}
-          value={query}
-          onKeyPress={handleKeyPress}
-        />
-      </div>
       <div className="not-found__container">
+        <h1 className="not-found__heading" to="/">
+          404 Not Found
+        </h1>
         <Link className="not-found__heading" to="/">
           Go to menu
         </Link>

@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'motseratt', sans-serif;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .app {
@@ -128,6 +129,29 @@
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
+.not-found {
+  padding: 2px 5%;
+  background-color: lightskyblue;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found__container {
+  width: 100%;
+  text-align: center;
+}
+
+.not-found__heading {
+  color: #fff;
+  font-weight: 600;
+  font-size: 3rem;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+}
+
 @media screen and (min-width: 650px) {
   .home__heading {
     padding-top: 15vh;
@@ -148,5 +172,9 @@
 
   .search-box__input {
     padding: 15px 50px;
+  }
+
+  .not-found__heading {
+    font-size: 4.2rem;
   }
 }

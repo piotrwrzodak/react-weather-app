@@ -1,11 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-export function Home({ query, setQuery }) {
+export function Home({ props, query, setQuery }) {
   const history = useHistory();
-
   const handleKeyPress = (evt) => {
     if (evt.key === 'Enter') {
+      props.changePath(`/current-weather/${query}`);
       history.push(`/current-weather/${query}`);
       setQuery('');
     }

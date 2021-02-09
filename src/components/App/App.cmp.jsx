@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Weather } from '../Weather';
@@ -10,13 +10,9 @@ import ErrorHandler from '../../services/ErrorHandler';
 export function App(props) {
   const [query, setQuery] = useState('');
 
-  useEffect(() => {
-    console.log(props.weather);
-  }, [props]);
-
   return (
     <BrowserRouter>
-      <ErrorHandler>
+      <ErrorHandler props={props}>
         <div
           className={
             10 > new Date().getMonth() > 4 || props.weather.main?.temp > 16
@@ -26,7 +22,7 @@ export function App(props) {
         >
           <Switch>
             <Route exact path="/">
-              <Home query={query} setQuery={setQuery} />
+              <Home props={props} query={query} setQuery={setQuery} />
             </Route>
             <Route path="/current-weather/:cityId">
               <Weather
@@ -37,7 +33,7 @@ export function App(props) {
               />
             </Route>
             <Route path="/place-not-found">
-              <NotFound />
+              <NotFound props={props} />
             </Route>
             <Redirect to="/" />
           </Switch>

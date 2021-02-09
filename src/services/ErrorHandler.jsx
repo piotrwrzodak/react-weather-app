@@ -1,14 +1,13 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { get } from 'lodash';
 import { NotFound } from '../components/NotFound';
 
-const ErrorHandler = ({ children }) => {
-  const location = useLocation();
-
-  switch (get(location.state, 'errorStatusCode')) {
-    case '404':
-      return <NotFound />;
+const ErrorHandler = ({ children, props }) => {
+  switch (get(props.location.state, 'errorStatusCode')) {
+    case '404': {
+      console.log('404 errorhandler');
+      return <NotFound props={props} />;
+    }
 
     default:
       return children;

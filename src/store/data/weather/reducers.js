@@ -1,12 +1,10 @@
-import { combineReducers } from 'redux';
-import { FEATURE_DATA_NAME } from '../../constants';
 import * as weatherAT from './action-types';
 
 const initialState = {
   weather: {},
 };
 
-function dataReducers(state = initialState, action) {
+export default function weatherReducers(state = initialState, action) {
   switch (action.type) {
     case weatherAT.SET_WEATHER: {
       return {
@@ -19,7 +17,3 @@ function dataReducers(state = initialState, action) {
     }
   }
 }
-
-export default combineReducers({
-  [FEATURE_DATA_NAME]: dataReducers,
-});

@@ -151,6 +151,10 @@
   text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
 }
 
+.not-found__heading--link {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 650px) {
   .home__heading {
     padding-top: 15vh;

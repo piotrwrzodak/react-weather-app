@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 export function Weather({ props, dateBuilder, query, setQuery }) {
   let { cityId } = useParams();
-  const history = useHistory();
   const { fetchApi } = props;
 
   const handleKeyPress = (evt) => {
     if (evt.key === 'Enter') {
-      history.push(`/react-weather-app/${query}`);
+      props.changePath(`/react-weather-app/${query}`);
       setQuery('');
     }
   };

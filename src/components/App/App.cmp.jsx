@@ -20,7 +20,7 @@ export function App(props) {
               : 'app app--cold'
           }
         >
-          <Switch>
+          <Switch location={props.location}>
             <Route exact path="/react-weather-app">
               <Home props={props} query={query} setQuery={setQuery} />
             </Route>

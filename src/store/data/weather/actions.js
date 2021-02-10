@@ -1,5 +1,5 @@
 import * as weatherAT from './action-types';
-import { push } from 'connected-react-router';
+import { push, replace } from 'connected-react-router';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -42,7 +42,7 @@ export const fetchWeather = (query) => {
       .then((apiData) => {
         if (apiData.cod === '404') {
           dispatch(
-            push({
+            replace({
               pathname: `/react-weather-app/${query}`,
               state: {
                 ...state.router.location.state,

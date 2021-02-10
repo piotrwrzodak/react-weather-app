@@ -5,7 +5,7 @@ export function Home({ props, query, setQuery }) {
   const history = useHistory();
   const handleKeyPress = (evt) => {
     if (evt.key === 'Enter') {
-      history.push(`/react-weather-app/${query}`);
+      props.changePath(`/react-weather-app/${query}`);
       setQuery('');
     }
   };

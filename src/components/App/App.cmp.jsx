@@ -21,10 +21,10 @@ export function App(props) {
           }
         >
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/react-weather-app">
               <Home props={props} query={query} setQuery={setQuery} />
             </Route>
-            <Route path="/current-weather/:cityId">
+            <Route path="/react-weather-app/:cityId">
               <Weather
                 dateBuilder={dateBuilder}
                 props={props}
@@ -32,10 +32,10 @@ export function App(props) {
                 setQuery={setQuery}
               />
             </Route>
-            <Route path="/place-not-found">
+            <Route path="/react-weather-app/place-not-found">
               <NotFound props={props} />
             </Route>
-            <Redirect to="/" />
+            <Redirect to="/react-weather-app" />
           </Switch>
         </div>
       </ErrorHandler>

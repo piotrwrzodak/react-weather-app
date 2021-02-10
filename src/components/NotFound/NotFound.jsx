@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export function NotFound({ props }) {
   const handleClick = () => {
-    props.changePath('/');
+    props.changePath('/react-weather-app');
   };
 
   return (

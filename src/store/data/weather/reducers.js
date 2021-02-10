@@ -12,6 +12,9 @@ export default function weatherReducers(state = initialState, action) {
         weather: action.payload,
       };
     }
+    case weatherAT.CLEAR_WEATHER: {
+      return initialState;
+    }
     default: {
       return state;
     }

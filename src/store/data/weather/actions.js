@@ -1,5 +1,5 @@
 import * as weatherAT from './action-types';
-import { replace, push } from 'connected-react-router';
+import { push } from 'connected-react-router';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -13,34 +13,41 @@ export const setWeather = (value) => ({
   payload: value,
 });
 
-const clearState = () => {
-  return (dispatch, getState) => {
-    const state = getState();
-    dispatch(
-      replace(state.router.location.state, {
-        errorStatusCode: null,
-      })
-    );
-  };
-};
+const clearWeather = () => ({
+  type: weatherAT.CLEAR_WEATHER,
+});
 
 export const changePath = (path) => {
-  return (dispatch) => {
-    clearState();
-    dispatch(push(path));
+  return (dispatch, getState) => {
+    dispatch(clearWeather());
+    const state = getState();
+    dispatch(
+      push({
+        pathname: path,
+        state: {
+          ...state.router.location.state,
+          errorStatusCode: null,
+        },
+      })
+    );
   };
 };
 
 export const fetchWeather = (query) => {
   return (dispatch, getState) => {
     const state = getState();
+    console.log(state.router);
     fetch(`${api.base}weather?q=${query}&units=metric&appid=${api.key}`)
       .then((res) => res.json())
       .then((apiData) => {
         if (apiData.cod === '404') {
           dispatch(
-            replace(state.router.location.state, {
-              errorStatusCode: apiData.cod,
+            push({
+              pathname: `/react-weather-app/${query}`,
+              state: {
+                ...state.router.location.state,
+                errorStatusCode: apiData.cod,
+              },
             })
           );
         } else {

@@ -10,7 +10,11 @@ export function NotFound({ props }) {
     <div className="not-found">
       <div className="not-found__container">
         <h1 className="not-found__heading">404 Not Found</h1>
-        <Link className="not-found__heading" to="/" onClick={handleClick}>
+        <Link
+          className="not-found__heading"
+          to="/react-weather-app"
+          onClick={handleClick}
+        >
           Go to menu
         </Link>
       </div>

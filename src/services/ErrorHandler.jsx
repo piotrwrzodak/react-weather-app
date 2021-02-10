@@ -4,11 +4,8 @@ import { NotFound } from '../components/NotFound';
 
 const ErrorHandler = ({ children, props }) => {
   switch (get(props.location.state, 'errorStatusCode')) {
-    case '404': {
-      console.log('404 errorhandler');
+    case '404':
       return <NotFound props={props} />;
-    }
-
     default:
       return children;
   }

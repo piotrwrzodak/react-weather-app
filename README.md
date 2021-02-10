@@ -16,10 +16,7 @@ Project is created with:
 - "react-router-dom": "^5.2.0"
 - "redux": "^4.0.5"
 - "redux-thunk": "^2.3.0"
-- "connected-react-router": "^6.8.0",
 - "dotenv": "^8.2.0"
-- "history": "^4.10.1"
-- "lodash": "^4.17.20"
 
 ## Setup
 

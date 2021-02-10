@@ -1,8 +1,10 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-export function NotFound({ props }) {
+export function NotFound() {
+  const history = useHistory();
   const handleClick = () => {
-    props.changePath('/react-weather-app');
+    history.push(`/react-weather-app`);
   };
 
   return (

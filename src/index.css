@@ -15,7 +15,7 @@
 }
 
 .app--cold {
-  background-color: lightskyblue;
+  background: linear-gradient(#87cefa, #4456bb);
 }
 
 .home {

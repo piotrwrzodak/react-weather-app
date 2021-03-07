@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Weather } from '../Weather';
 import { Home } from '../Home';
@@ -10,13 +10,13 @@ export function App(props) {
   const [query, setQuery] = useState('');
 
   return (
-    <BrowserRouter>
-      <div className={10 > new Date().getMonth() > 4 ? 'app' : 'app app--cold'}>
+    <HashRouter>
+      <div className="app">
         <Switch>
-          <Route exact path="/react-weather-app">
+          <Route exact path="/">
             <Home query={query} setQuery={setQuery} />
           </Route>
-          <Route path="/react-weather-app/:cityId">
+          <Route path="/:cityId">
             <Weather
               dateBuilder={dateBuilder}
               props={props}
@@ -24,13 +24,13 @@ export function App(props) {
               setQuery={setQuery}
             />
           </Route>
-          <Route path="/react-weather-app/place-not-found">
+          <Route path="/place-not-found">
             <NotFound />
           </Route>
-          <Redirect to="/react-weather-app" />
+          <Redirect to="/" />
         </Switch>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

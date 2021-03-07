@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 export function NotFound() {
   const history = useHistory();
   const handleClick = () => {
-    history.push(`/react-weather-app`);
+    history.push(`/`);
   };
 
   return (

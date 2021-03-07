@@ -9,7 +9,7 @@ export function Weather({ props, dateBuilder, query, setQuery }) {
 
   const handleKeyPress = (evt) => {
     if (evt.key === 'Enter') {
-      history.push(`/react-weather-app/${query}`);
+      history.push(`/${query}`);
       setQuery('');
     }
   };
